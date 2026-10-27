@@ -1,0 +1,88 @@
+# Every option, with comments. Anything omitted falls back to the theme.
+theme: dark                     # dark | light | vintage | pedal | neon
+output: out/full
+scale: 1                        # 2 -> @2x images (layout.json stays in logical px)
+orientation: horizontal         # film strip direction: vertical | horizontal
+layout: auto                    # auto | rack | pedal
+size: [720, 300]
+
+palette:                        # referenced elsewhere as "$accent", "$text", "$text_dim"
+  accent: "#38d39f"
+  text: "#e2e5ea"
+  text_dim: "#8a9099"
+
+background:
+  style: brushed                # solid | gradient | brushed | matte | metallic | wood | carbon | grid
+  colors: ["#2b3036", "#14171a"]  # top -> bottom (2 or more stops)
+  texture: 0.5                  # 0..1
+  vignette: 0.25
+  corner_radius: 0
+  border: true
+  header_line: true
+  panel: true
+  panel_color: "#0000003c"
+  panel_outline: "#5a5e6678"
+  panel_radius: 10
+  screws: true
+  screw_color: "#a4a8b0"
+  wood_sides: false
+  footer: "v1.0"
+
+title:
+  text: SPECTRA
+  subtitle: MULTIBAND SATURATOR
+  font: modern                  # alias (modern, condensed, heavy, impact, serif-bold, mono, ...) / file name / path
+                                # variable fonts: "bahnschrift.ttf:Bold Condensed"
+  size: null                    # auto
+  color: "$text"
+  gradient: ["#ffffff", "#9aa3ad"]
+  effects: [shadow, bevel]      # shadow | emboss | engrave | glow | outline | bevel
+  letter_spacing: 0.06
+  accent_bar: true
+  align: left                   # left | center | right
+
+labels:
+  font: modern-label
+  size: null
+  color: "$text"
+  spacing: 0.08
+
+knobs:
+  style: modern                 # modern | pedal | vintage | flat | metal
+  frames: 128
+  start_angle: -135
+  end_angle: 135
+  arc: true
+  arc_color: "$accent"
+  arc_glow: false
+  pointer: line                 # line | dot | none
+  ticks: {count: 11, major: [0, 5, 10], style: lines}
+  labels: [LOW, MID, HIGH, DRIVE, MIX]
+  items:                        # per-knob overrides by index (0 = first); others keep the section values
+    3: {rel: 1.25, style: metal, arc: true}   # DRIVE: bigger knob, different style -> knob_2.png
+    4: {bipolar: true, range_labels: ["-", "+"]}  # MIX
+
+toggles:
+  style: bat                    # bat | slide | pill
+  positions: 2                  # 2 | 3
+  items:
+    - {label: OVERSAMPLE, states: ["1x", "4x"]}
+
+footswitches:
+  style: button                 # button | stomp
+  labels: [BYPASS]
+
+jacks:                          # 0-2 per side; size is the enclosure, the image grows sideways
+  left:  [{label: IN, dir: in}]  # dir: in (arrow points inward) | out (outward) | none
+  right: [OUT]                   # dir inferred from IN / INPUT / OUT / OUTPUT in the label
+  arrow: true
+  size: null                     # jack height (px), null = auto
+  label_color: "$text"
+
+leds:
+  style: round                  # round | square
+  bezel: chrome                 # chrome | black | none
+  frames: 2                     # >2 -> brightness steps (meter-like)
+  items:
+    - {label: "IN", color: "#38d39f"}
+    - {label: "CLIP", color: "#ff3b30", default: 0}

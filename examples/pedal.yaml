@@ -1,0 +1,10 @@
+theme: pedal
+output: out/pedal
+title:
+  text: FUZZ BOX
+  subtitle: SILICON FUZZ
+background:
+  colors: ["#d9661f", "#a8420e"]   # orange enclosure
+knobs: [VOLUME, FUZZ, TONE]
+toggles:
+  items: [{label: "", states: [VINTAGE, MODERN]}]

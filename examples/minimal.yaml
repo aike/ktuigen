@@ -1,0 +1,3 @@
+# Minimal: everything else comes from the default "dark" theme.
+title: KT DELAY
+knobs: [DELAY TIME, FEEDBACK, WET LEVEL, DUCKING]

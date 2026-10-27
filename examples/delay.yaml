@@ -1,0 +1,25 @@
+# Recreates the KT Delay layout of gen_images.py with ktuigen.
+theme: dark
+output: out/delay
+size: [600, 260]
+orientation: vertical          # knob.png = 80 x (80*101)
+
+title:
+  text: KT DELAY
+  subtitle: STEREO DUCKING DELAY
+
+knobs:
+  size: 80
+  frames: 101
+  labels: [DELAY TIME, FEEDBACK, WET LEVEL, DUCKING]
+  items:
+    - {range_labels: ["0", "400"], default: 0.625}
+    - {default: 0.3}
+    - {default: 0.5}
+    - {default: 0.0}
+
+footswitches:
+  labels: [BYPASS]             # "button" style sits in the header on rack layouts
+
+background:
+  footer: v1.0  aikelab

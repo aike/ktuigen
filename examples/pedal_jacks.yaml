@@ -1,0 +1,13 @@
+# Stomp box with input/output jacks on the enclosure sides.
+# Each side takes 0-2 jacks. The IN/OUT arrow is inferred from the label
+# (IN / INPUT / OUT / OUTPUT tokens) or set explicitly with `dir`.
+theme: pedal
+output: out/pedal_jacks
+title: {text: SUBSYNTH, subtitle: OCTAVE GENERATOR}
+knobs: [TUNE, DRY MIX, LEVEL, RELEASE, THRESHOLD]
+jacks:
+  left:  [L-IN, R-IN]                 # left side = inputs (arrow points inward)
+  right: [L-OUT, R-OUT]               # right side = outputs (arrow points outward)
+  # right: [{label: SEND, dir: out}, {label: RETURN, dir: in}]
+  # left: 1                           # one jack without label
+  # arrow: false                      # labels without triangles

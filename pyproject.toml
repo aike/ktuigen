@@ -1,0 +1,19 @@
+[project]
+name = "ktuigen"
+version = "0.1.0"
+description = "GUI image generator for audio effect plugins (VST / AU / CLAP / ...)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "pillow>=10.0",
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+ktuigen = "ktuigen.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
